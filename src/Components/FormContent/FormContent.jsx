@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Info } from "lucide-react";
 import "../../Styles/FormContent.css";
 
-const BorrowerForm = () => {
+const BorrowerForm = ({ currentStep, setCurrentStep }) => {
   const [formData, setFormData] = useState({
     propertyName: "",
     propertyType: "",
@@ -45,7 +45,9 @@ const BorrowerForm = () => {
           <div className="form-group">
             <label className="form-label">Property Type</label>
             <select className="form-select">
-              <option value="">Property Type</option>
+              <option value="" disabled selected>
+                Property Type
+              </option>
               <option value="residential">Residential</option>
               <option value="commercial">Commercial</option>
             </select>
@@ -55,7 +57,9 @@ const BorrowerForm = () => {
           <div className="form-group">
             <label className="form-label">Number of Units</label>
             <select className="form-select">
-              <option value="">Number of Units</option>
+              <option value="" disabled selected>
+                Number of Units
+              </option>
               <option value="1-10">1-10</option>
               <option value="11-50">11-50</option>
               <option value="51+">51+</option>
@@ -80,16 +84,30 @@ const BorrowerForm = () => {
             onDragOver={(e) => e.preventDefault()}
             className="file-drop-zone"
           >
-            Browse or Drag & Drop to Attach a file
+            Browse or Attach a file
           </div>
         </div>
 
         {/* Action Buttons */}
         <div className="button-group">
-          <button type="button" className="btn btn-back">
+          {/* Back Button */}
+          <button
+            type="button"
+            className="btn btn-back"
+            onClick={() => setCurrentStep((prev) => Math.max(prev - 1, 1))}
+            disabled={currentStep === 1}
+          >
             Back
           </button>
-          <button type="submit" className="btn btn-continue">
+
+          {/* Continue Button */}
+          <button
+            type="button"
+            className="btn btn-continue"
+            onClick={
+              () => setCurrentStep((prev) => Math.min(prev + 1, 5)) // Assuming 5 steps in total
+            }
+          >
             Continue
           </button>
         </div>

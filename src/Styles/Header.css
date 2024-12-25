@@ -1,16 +1,30 @@
+/* Header Base Styles */
+header {
+  position: relative;
+  z-index: 1000;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
-  background-color: white;
+  padding: 1rem 2rem;
+  background-color: #fff;
   border-bottom: 1px solid #e9ecef;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar.visible,
+.navbar {
+  transform: translateX(0);
 }
 
 .logo-container {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
 }
 
 .logo {
@@ -24,6 +38,7 @@
   color: white;
   font-weight: bold;
 }
+
 .logo-text {
   font-weight: bold;
 }
@@ -32,6 +47,7 @@
   display: flex;
   align-items: center;
   gap: 0.2rem;
+  cursor: pointer;
 }
 
 .user-avatar {
@@ -45,10 +61,43 @@
   color: white;
   font-weight: lighter;
 }
+
 .user-name {
   font-weight: lighter;
 }
+
 .user-arr {
   height: 14px;
   width: 14px;
+}
+
+/* Menu Icon */
+.menu-icon {
+  display: none;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 2000;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 13px;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+    transform: translateX(-100%);
+  }
 }
