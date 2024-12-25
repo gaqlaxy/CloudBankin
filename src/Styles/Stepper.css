@@ -1,0 +1,58 @@
+.stepper-container {
+  padding: 2rem;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23f0f5ff' fill-opacity='0.5' d='M0,192L40,181.3C80,171,160,149,240,149.3C320,149,400,171,480,176C560,181,640,171,720,144C800,117,880,75,960,80C1040,85,1120,139,1200,160C1280,181,1360,171,1400,165.3L1440,160L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z'%3E%3C/path%3E%3Cpath fill='%23e6eeff' fill-opacity='0.3' d='M0,224L40,213.3C80,203,160,181,240,181.3C320,181,400,203,480,208C560,213,640,203,720,176C800,149,880,107,960,112C1040,117,1120,171,1200,192C1280,213,1360,203,1400,197.3L1440,192L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.stepper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #8a8a8a;
+  font-size: 14px;
+}
+
+.step.active {
+  color: #2d5fef;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0e0e0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.step.active .circle {
+  background-color: #2d5fef;
+  color: white;
+}
+
+.label {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.line {
+  flex: 1; /* Ensures lines stretch evenly between steps */
+  height: 2px;
+
+  border-top: 2px dotted #8a8a8a; /* Dotted line style */
+  margin: 0 0.5rem; /* Add spacing between the line and steps */
+}
