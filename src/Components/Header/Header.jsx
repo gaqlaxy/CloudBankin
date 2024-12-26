@@ -13,7 +13,6 @@ export default function Header() {
   return (
     <>
       <header aria-label="Main Header">
-        {/* Menu Icon for mobile */}
         <div
           className="menu-icon"
           onClick={toggleMenu}
@@ -22,7 +21,6 @@ export default function Header() {
           <HiMenuAlt3 />
         </div>
 
-        {/* Sliding Header Content */}
         <nav className={`navbar ${menuOpen ? "visible" : ""}`}>
           <div
             className="logo-container"

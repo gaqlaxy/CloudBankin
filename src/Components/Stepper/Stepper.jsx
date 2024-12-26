@@ -15,16 +15,15 @@ const Stepper = () => {
     "Document Upload",
   ];
 
-  // Effect to check screen size
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 768); // Update state based on screen size
+      setIsSmallScreen(window.innerWidth < 768);
     };
 
-    handleResize(); // Check on initial load
-    window.addEventListener("resize", handleResize); // Listen for resize
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener("resize", handleResize); // Cleanup on component unmount
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
@@ -43,11 +42,10 @@ const Stepper = () => {
             >
               <div className="circle">{index + 1}</div>
               <span className="label">
-                {/* Render dynamic text based on screen size */}
                 {index === 0 && isSmallScreen ? "Borrower Info" : label}
               </span>
             </div>
-            {/* Dotted line between steps */}
+
             {index < steps.length - 1 && (
               <div
                 className={`dotted-line ${

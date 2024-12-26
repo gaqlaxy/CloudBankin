@@ -21,40 +21,6 @@
   gap: 20px;
 }
 
-/* For larger screens, steps are shown without horizontal scrolling */
-@media screen and (min-width: 768px) {
-  .stepper {
-    overflow-x: visible; /* No scrolling for large screens */
-    scroll-snap-type: none; /* Disable snap for larger screens */
-  }
-
-  .step {
-    flex-shrink: 0;
-    width: auto; /* Auto width for large screens */
-  }
-}
-
-/* For smaller screens (below 768px), enable horizontal scrolling */
-@media screen and (max-width: 768px) {
-  .stepper {
-    overflow-x: auto; /* Enable horizontal scroll */
-    scroll-snap-type: x mandatory; /* Enable scroll snapping */
-    gap: 15px;
-    border-top: 1px solid #e9ecef;
-    padding-top: 0.5rem;
-  }
-
-  .step {
-    scroll-snap-align: start; /* Snap to each step */
-    flex-shrink: 0;
-    width: 150px; /* Fixed width for each step */
-  }
-  .stepper-container {
-    padding: 0;
-    background-image: none;
-  }
-}
-
 .step {
   display: flex;
   flex-direction: column;
@@ -113,7 +79,6 @@ button:hover:not(:disabled) {
   background-color: #1a46bf;
 }
 
-/* New styles for dotted lines */
 .dotted-line {
   width: 40px;
   height: 2px;
@@ -140,4 +105,36 @@ button:hover:not(:disabled) {
 
 .dotted-line.completed::before {
   background-color: #2d5fef;
+}
+
+@media screen and (min-width: 768px) {
+  .stepper {
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+
+  .step {
+    flex-shrink: 0;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .stepper {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 15px;
+    border-top: 1px solid #e9ecef;
+    padding-top: 0.5rem;
+  }
+
+  .step {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 150px;
+  }
+  .stepper-container {
+    padding: 0;
+    background-image: none;
+  }
 }

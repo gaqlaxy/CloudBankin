@@ -41,7 +41,6 @@ const BorrowerForm = ({ currentStep, setCurrentStep }) => {
             />
           </div>
 
-          {/* Property Type Dropdown */}
           <div className="form-group">
             <label className="form-label">Property Type</label>
             <select className="form-select">
@@ -53,7 +52,6 @@ const BorrowerForm = ({ currentStep, setCurrentStep }) => {
             </select>
           </div>
 
-          {/* Number of Units Dropdown */}
           <div className="form-group">
             <label className="form-label">Number of Units</label>
             <select className="form-select">
@@ -67,7 +65,6 @@ const BorrowerForm = ({ currentStep, setCurrentStep }) => {
           </div>
         </div>
 
-        {/* Property Address */}
         <div className="form-group">
           <label className="form-label">Property Address</label>
           <textarea
@@ -76,7 +73,6 @@ const BorrowerForm = ({ currentStep, setCurrentStep }) => {
           />
         </div>
 
-        {/* File Attachment */}
         <div className="form-group">
           <label className="form-label">File Attachment</label>
           <div
@@ -88,9 +84,7 @@ const BorrowerForm = ({ currentStep, setCurrentStep }) => {
           </div>
         </div>
 
-        {/* Action Buttons */}
         <div className="button-group">
-          {/* Back Button */}
           <button
             type="button"
             className="btn btn-back"
@@ -100,13 +94,10 @@ const BorrowerForm = ({ currentStep, setCurrentStep }) => {
             Back
           </button>
 
-          {/* Continue Button */}
           <button
             type="button"
             className="btn btn-continue"
-            onClick={
-              () => setCurrentStep((prev) => Math.min(prev + 1, 5)) // Assuming 5 steps in total
-            }
+            onClick={() => setCurrentStep((prev) => Math.min(prev + 1, 5))}
           >
             Continue
           </button>
